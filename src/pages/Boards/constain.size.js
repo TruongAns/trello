@@ -1,0 +1,3 @@
+const HEADER_HEIGHT = '58px'
+const BOARD_BAR_HEIGHT = '58px'
+export { HEADER_HEIGHT, BOARD_BAR_HEIGHT }
