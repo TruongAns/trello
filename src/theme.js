@@ -1,24 +1,86 @@
 import { createTheme } from '@mui/material/styles'
-import { green } from '@mui/material/colors'
+import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
 
 const theme = createTheme({
   //   cssVariables: true,
+
   colorSchemes: {
-    light: true,
-    dark: true,
-  },
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
-      contrastText: '#fff',
+    light: {
+      palette: {
+        primary: teal,
+        secondary: deepOrange,
+      },
     },
-    secondary: {
-      main: green[500],
+    dark: {
+      palette: {
+        primary: cyan,
+        secondary: orange,
+      },
     },
   },
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: '0.875rem',
+          textTransform: 'none',
+        },
+      },
+    },
+
+    MuiInputLabel: {
+      styleOverrides: {
+        // Name of the slot
+        root: ({ theme }) => ({
+          fontSize: '0.875rem',
+          color: theme.palette.primary.main,
+        }),
+      },
+    },
+
+    MuiOutlinedInput: {
+      styleOverrides: {
+        // Name of the slot
+        root: ({ theme }) => {
+          console.log(theme)
+
+          return {
+            color: theme.palette.primary.main,
+            '& .MuiOutlinedInput-notchedOutline': {
+              borderColor: theme.palette.primary.light,
+            },
+            '&.Mui-focused': {
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: `0.5px solid ${theme.palette.primary.light}`,
+              },
+            },
+            '&:hover': {
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: `0.5px solid ${theme.palette.primary.main}`,
+              },
+            },
+          }
+        },
+      },
+    },
+  },
+  //   palette: {
+  //     primary: {
+  //       light: '#757ce8',
+  //       main: '#3f50b5',
+  //       dark: '#002884',
+  //       contrastText: '#fff',
+  //     },
+  //     secondary: {
+  //       light: '#ff7961',
+  //       main: '#f44336',
+  //       dark: '#ba000d',
+  //       contrastText: '#000',
+  //     },
+  //   },
 })
 
 export default theme
