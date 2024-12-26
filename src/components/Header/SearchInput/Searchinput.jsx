@@ -21,6 +21,28 @@ export default function SearchInput() {
           md: 1,
           lg: 0,
         },
+        '& .MuiInputBase-input': {
+          color: 'white',
+        },
+
+        '& .MuiInputLabel-root': {
+          color: 'white',
+        },
+        // '& .MuiOutlinedInput-notchedOutline': {
+        //   border: '1px solid white',
+        // },
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            border: '1px solid white',
+          },
+          '&:hover fieldset': {
+            border: '2px solid white !important',
+          },
+          '&.Mui-focused  fieldset': {
+            borderColor: 'white',
+            color: 'white',
+          },
+        },
       }}
     />
   )

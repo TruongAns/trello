@@ -36,34 +36,7 @@ const theme = createTheme({
         // Name of the slot
         root: ({ theme }) => ({
           fontSize: '0.875rem',
-          color: theme.palette.primary.main,
         }),
-      },
-    },
-
-    MuiOutlinedInput: {
-      styleOverrides: {
-        // Name of the slot
-        root: ({ theme }) => {
-          console.log(theme)
-
-          return {
-            color: theme.palette.primary.main,
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.light,
-            },
-            '&.Mui-focused': {
-              '& .MuiOutlinedInput-notchedOutline': {
-                border: `0.5px solid ${theme.palette.primary.light}`,
-              },
-            },
-            '&:hover': {
-              '& .MuiOutlinedInput-notchedOutline': {
-                border: `0.5px solid ${theme.palette.primary.main}`,
-              },
-            },
-          }
-        },
       },
     },
   },

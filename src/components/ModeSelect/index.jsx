@@ -27,16 +27,40 @@ const ModeSelect = () => {
     <FormControl
       style={{ minWidth: 140 }}
       size='small'
-      sx={{ display: { xs: 'none', md: 'block' } }}
+      sx={{
+        display: {
+          xs: 'none',
+          md: 'block',
+          color: 'white',
+          '& .MuiInputLabel-root': {
+            color: 'white !important',
+          },
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'white',
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            border: '2px solid white',
+            borderColor: 'white !important',
+          },
+          '& .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'white ',
+          },
+          '& .MuiInputBase-root': {
+            color: 'white ',
+          },
+          '& .MuiSvgIcon-root': {
+            color: 'white ',
+          },
+        },
+      }}
     >
-      <InputLabel id='simple-theme'>Theme</InputLabel>
+      <InputLabel id='simple-theme'>Themes</InputLabel>
       <Select
         labelId='simple-theme'
         id='theme-select'
         value={mode}
         label='Theme'
         onChange={handleChange}
-        sx={{}}
       >
         <MenuItem value='light'>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
