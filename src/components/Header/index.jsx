@@ -1,5 +1,5 @@
-import { Box, Button } from '@mui/material'
-import { HEADER_HEIGHT } from '@/pages/Boards/constain.size'
+import { Box, Button, useTheme } from '@mui/material'
+import { HEADER_HEIGHT } from '@/pages/Boards/constain.styles'
 import ModeSelect from 'components/ModeSelect'
 import AppsIcon from '@mui/icons-material/Apps'
 import TrelloLogo from './TrelloLogo/TrelloLogo'
@@ -9,8 +9,14 @@ import Started from './Started/Started'
 import Template from './Template/Template'
 import SearchInput from './SearchInput/Searchinput'
 import User from './User/User'
+import AddIcon from '@mui/icons-material/Add'
+import { HEADER_BG_DARK, HEADER_BG_LIGHT } from '@/pages/Boards/constain.styles'
 
 const Header = () => {
+  const theme = useTheme()
+  const mode = theme.palette.mode
+  console.log({ mode })
+
   return (
     <Box
       px={2}
@@ -20,9 +26,12 @@ const Header = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        // backgroundColor: 'primary.light',
-        color: 'primary.main',
+        backgroundColor: mode == 'light' ? HEADER_BG_LIGHT : HEADER_BG_DARK,
+        color: 'white',
         gap: 2,
+        '& .MuiButtonBase-root': {
+          color: 'white',
+        },
       }}
     >
       <Box
@@ -51,8 +60,11 @@ const Header = () => {
         </Box>
 
         <Button
-          variant='outlined'
-          sx={{ height: 40, display: { xs: 'none', md: 'block' } }}
+          sx={{
+            height: 40,
+            display: { xs: 'none', md: 'flex' },
+          }}
+          startIcon={<AddIcon />}
         >
           Create
         </Button>
