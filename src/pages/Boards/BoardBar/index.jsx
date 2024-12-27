@@ -63,8 +63,6 @@ const BoardBar = () => {
 
           gap: 2,
           paddingX: 2,
-          borderBottom: '1px solid ',
-          borderColor: 'white',
         }}
       >
         {/* Left */}

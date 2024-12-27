@@ -7,14 +7,14 @@ const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {
-        primary: teal,
-        secondary: deepOrange,
+        // primary: teal,
+        // secondary: deepOrange,
       },
     },
     dark: {
       palette: {
-        primary: cyan,
-        secondary: orange,
+        // primary: cyan,
+        // secondary: orange,
       },
     },
   },
@@ -40,20 +40,6 @@ const theme = createTheme({
       },
     },
   },
-  //   palette: {
-  //     primary: {
-  //       light: '#757ce8',
-  //       main: '#3f50b5',
-  //       dark: '#002884',
-  //       contrastText: '#fff',
-  //     },
-  //     secondary: {
-  //       light: '#ff7961',
-  //       main: '#f44336',
-  //       dark: '#ba000d',
-  //       contrastText: '#000',
-  //     },
-  //   },
 })
 
 export default theme

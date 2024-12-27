@@ -15,7 +15,6 @@ import { HEADER_BG_DARK, HEADER_BG_LIGHT } from '@/pages/Boards/constain.styles'
 const Header = () => {
   const theme = useTheme()
   const mode = theme.palette.mode
-  console.log({ mode })
 
   return (
     <Box

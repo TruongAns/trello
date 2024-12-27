@@ -1,7 +1,7 @@
 import { Container } from '@mui/material'
 import Header from '@/components/Header'
 import BoardBar from './BoardBar'
-import BoardContent from './BoardContent/indext'
+import BoardContent from './BoardContent'
 
 // Boards List
 const BoardPage = () => {
