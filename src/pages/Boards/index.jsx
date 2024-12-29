@@ -2,7 +2,7 @@ import { Container } from '@mui/material'
 import Header from '@/components/Header'
 import BoardBar from './BoardBar'
 import BoardContent from './BoardContent'
-
+import { mockData as boardData } from '@/apis/mockdata'
 // Boards List
 const BoardPage = () => {
   return (
@@ -15,7 +15,7 @@ const BoardPage = () => {
     >
       <Header />
       <BoardBar />
-      <BoardContent />
+      <BoardContent board={boardData.board} />
     </Container>
   )
 }
